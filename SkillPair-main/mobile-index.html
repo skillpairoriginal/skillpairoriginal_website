@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPair - Home</title>
+    <link rel="stylesheet" href="./styleSmallScreen.css">
+    <link rel="script" href="./modeSwich.js">
+    <script src="./modeSwich.js"></script>
+</head>
+<script>
+
+    function checkScreenWidth() {
+        // Holen Sie die aktuelle Bildschirmbreite
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        // Setzen Sie den Grenzwert für die Bildschirmbreite (z.B. 768 Pixel)
+        var breakpoint = 768;
+
+        // Überprüfen, ob die Bildschirmbreite unter dem Grenzwert liegt
+        if (screenWidth > breakpoint) {
+            // Ändern Sie das HTML-Dokument oder führen Sie andere Aktionen durch
+            document.location.href = 'desktop-index.html'; // Hier mobile.html durch den gewünschten Dateinamen ersetzen
+        }
+
+        // Sie können hier Ihre eigenen Regeln für die Schriftgrößenanpassung definieren
+        var fontSizeTitle = (50 * screenWidth / 768) * 1.4
+        var ImageSizeLogo = (75 * screenWidth / 768) * 1.4
+        var margin20px = (20 * screenWidth / 768) * 1.4
+
+        var targetElementLogo = document.getElementById('logoSkillPair')
+        var targetElement = document.getElementById('headline');
+
+        // Speichern des Werts in der CSS-Klasse
+        targetElement.style.setProperty('--text-logo-size', fontSizeTitle + 'px')
+        targetElementLogo.style.setProperty('--image-logo-size', ImageSizeLogo + 'px')
+        targetElement.style.setProperty(' --set-margin-20px', margin20px + 'px')
+    }
+
+    // Überprüfen Sie die Bildschirmbreite beim Laden der Seite und bei Änderungen
+    window.onload = checkScreenWidth;
+    window.onresize = checkScreenWidth;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var navButtonMobile = document.getElementById("navButtonMobile");
+        navButtonMobile.addEventListener('click', function () {
+            navigateToPage();
+        });
+
+        var check = document.getElementById("modeSwichCheck")
+        check.addEventListener('change', function(){
+            console.log("checked")
+        })
+
+    });
+    
+    function navigateToPage() {
+        document.location.href = 'signIn.html';
+    }
+
+</script>
+
+<body>
+    <div class="header">
+        <a class="headerLink" href="./mobile-index.html">
+            <img src="./images/LogoSkillPair.png" width="180px" alt="logo" id="logoSkillPair">
+            <p id="headline" class="fontSizeTitle">SkillPair</p>
+        </a>
+        <div class="headerLink">
+            <label class="hamburgerMenu">
+                <input type="checkbox">
+            </label>
+            <aside class="sidebar">
+                <nav>
+                    <div class="Login">
+                        <label for="navButtonMobile" class="labelUser benutzerkonto userCheckbox">
+                            <input class="benutzerkonto userCheckbox" type="button" id="navButtonMobile">
+                            <p class="LoginTxt">Login</p>
+                            <img src="./images/BenutzerLogo.svg" alt="UserLogo" class="benutzerkonto">
+                        </label>                        
+                    </div>
+                    <div class="swichMode Login">
+                        <label class="labelMode">
+                            <input type="checkbox" id="modeSwichCheck">
+                            <p class="LoginTxt" id="swichTxt">Ligth Mode</p>
+                            <img src="./images/mode_night_FILL0_wght400_GRAD0_opsz24.svg" alt="moon" class="modeSwich modeSwichMoon">
+                            <img src="./images/light_mode_FILL0_wght400_GRAD0_opsz24.svg" alt="sun" class="modeSwich modeSwichSun">
+                        </label>                        
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

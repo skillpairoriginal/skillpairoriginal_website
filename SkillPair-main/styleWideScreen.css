@@ -1,0 +1,199 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+@font-face {
+    font-family: logo;
+    src: url(./fonts/open-sans.bold-italic.ttf);
+}
+
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --color-bg-default: #2E2E2E;
+    --color-text-default: #FFFFFF;
+    --color-header-default: #1C1C1C;
+}
+body{
+    background-color: var(--color-bg-default);
+    color: var(--color-text-default);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    background-color: var(--color-header-default);
+    color: white;
+    align-items: center;
+    font-size: 400%;
+    border-style: none;
+    text-decoration: none;
+    text-align: left;
+}
+
+#logoSkillPair {
+    width: auto;
+    height: 90px;
+    margin-left: 20px;
+}
+
+#headline {
+    margin-left: 40px;
+    font-family: logo;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.error {
+    margin: 20px;
+}
+
+.headerBack {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-header-default);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.benutzerkonto {
+    border-radius: 50px;
+    background: var(--color-header-default);
+    border-style: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 50px;
+    height: auto;
+    z-index: 1;
+    margin-left: 10px;
+}
+
+#LoginList {
+    list-style: none;
+}
+
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    margin-right: 20px;
+    z-index: 3;
+}
+
+.userCheckbox {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.userCheckbox~div {
+    display: none;
+}
+
+.userCheckbox:checked~div {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.LoginInput {
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.Login {
+    margin-right: 0px;
+}
+
+.LoginInputTitle {
+    margin-top: 0;
+    color: black !important;
+}
+
+.LoginInputButton {
+    border-radius: 20px;
+    background-color: #161515 100%, 27%;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    margin: 5px 10px 0 10px;
+    border-style: none;
+
+}
+
+.LoginInputButton:hover {
+    cursor: pointer;
+}
+
+.LoginInputCreateAccount {
+    text-decoration: none;
+    text-align: center;
+}
+.SignUpHeadline{
+    text-align: center;
+}
+.modeSwich{
+    border-radius: 50px;
+    background: var(--color-header-default);
+    cursor: pointer;
+    margin-top: 10px;
+    width: 50px;
+    height: auto;
+    z-index: 1;
+    margin-right: 20px;
+
+}
+.modeSwichCheckbox{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    opacity: 0;
+}
+.modeSwichSun{
+    position: relative;
+}
+.headerLeft{
+    display: flex;
+}
+.modeSwichCheckbox:checked ~ .modeSwichSun{
+    display: none;
+}
+.modeSwichCheckbox:checked {
+    --color-bg-default: #161515 !important;
+    --color-text-default: #D9D9D9 !important;
+    --color-header-default: #0C0C0C !important;
+}
+.modeSwichMoon{
+    rotate: 150deg;
+    margin-top: 10px;
+    position: relative;
+    display: none;
+}
+.modeSwichCheckbox:checked ~ .modeSwichMoon{
+    display: block;
+}
+.modeSwichSun{
+    rotate: 23deg;
+}
+.modeSwich{
+    fill: white !important;
+}

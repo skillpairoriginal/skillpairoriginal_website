@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPair - Home</title>
+    <link rel="stylesheet" href="./styleWideScreen.css">
+    <link rel="img" href="./images/LogoSkillPair.png">
+    <link rel="script" href="./modeSwich.js">
+</head>
+<script>
+    // Funktion zum Überprüfen der Bildschirmbreite und Wechsel des HTML-Dokuments
+    function checkScreenWidth() {
+        // Holen Sie die aktuelle Bildschirmbreite
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        // Setzen Sie den Grenzwert für die Bildschirmbreite (z.B. 768 Pixel)
+        var breakpoint = 768;
+
+        // Überprüfen, ob die Bildschirmbreite unter dem Grenzwert liegt
+        if (screenWidth < breakpoint) {
+            // Ändern Sie das HTML-Dokument oder führen Sie andere Aktionen durch
+            document.location.href = 'mobile-index.html'; // Hier mobile.html durch den gewünschten Dateinamen ersetzen
+        }
+    }
+
+    // Überprüfen Sie die Bildschirmbreite beim Laden der Seite und bei Änderungen
+    window.onload = checkScreenWidth;
+    window.onresize = checkScreenWidth;
+</script>
+<body class="wideScreen">
+    <div class="headerBack">
+        <a class="header" href="./desktop-index.html">
+            <img src="./images/LogoSkillPair.png" width="180px" alt="logo" id="logoSkillPair">
+            <p id="headline">SkillPair</p>
+        </a>
+        <div class="headerLeft">
+            <input type="checkbox" class="modeSwich modeSwichCheckbox" id="modeSwichCheck">
+            <script src="./modeSwich.js"></script>
+            <img src="./images/mode_night_FILL0_wght400_GRAD0_opsz24.svg" alt="moon" class="modeSwich modeSwichMoon">
+            <img src="./images/light_mode_FILL0_wght400_GRAD0_opsz24.svg" alt="sun" class="modeSwich modeSwichSun">
+            </input>
+            <div class="Login">
+                <input class="benutzerkonto userCheckbox" type="checkbox"><img src="./images/BenutzerLogo.svg"
+                    alt="UserLogo" class="benutzerkonto"></input>
+                <div class="LoginDropDown">
+                    <h1 class="LoginInput LoginInputTitle">Login:</h1>
+                    <input type="text" placeholder="Username" class="LoginInput" id="InputUser">
+                    <input type="password" placeholder="password" class="LoginInput" id="InputPassword">
+                    <button type="submit" class="LoginInputButton" id="LoginButton">Log In</button>
+                    <a href="./createAccount.html" class="LoginInput LoginInputCreateAccount">&lt;or create one&gt;</a>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="error">Sorry, this page is in development.</p>
+</body>
+</html>

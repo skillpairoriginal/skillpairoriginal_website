@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPair - Home</title>
+    <link rel="stylesheet" href="./styleSmallScreen.css">
+    <link rel="script" href="./modeSwich.js">
+    <link rel="script" href="./responsive.js">
+    <script src="./modeSwich.js"></script>
+    <script src="./responsive.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a class="headerLink" href="./mobile-index.html" id="header">
+            <img src="./images/LogoSkillPair.png" width="180px" alt="logo" id="logoSkillPair">
+            <p id="headline" class="fontSizeTitle">SkillPair</p>
+        </a>
+        <div class="headerLink">
+            <label class="hamburgerMenu">
+                <input type="checkbox">
+            </label>
+            <aside class="sidebar">
+                <nav>
+                    <div class="Login">
+                        <label for="navButtonMobile" class="labelUser benutzerkonto userCheckbox">
+                            <input class="benutzerkonto userCheckbox" type="button" id="navButtonMobile">
+                            <p class="LoginTxt">Login</p>
+                            <img src="./images/BenutzerLogo.svg" alt="UserLogo" class="benutzerkonto">
+                        </label>                        
+                    </div>
+                    <div class="swichMode Login">
+                        <label class="labelMode">
+                            <input type="checkbox" id="modeSwichCheck">
+                            <p class="LoginTxt" id="swichTxt">Ligth Mode</p>
+                            <img src="./images/mode_night_FILL0_wght400_GRAD0_opsz24.svg" alt="moon" class="modeSwich modeSwichMoon">
+                            <img src="./images/light_mode_FILL0_wght400_GRAD0_opsz24.svg" alt="sun" class="modeSwich modeSwichSun">
+                        </label>                        
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
